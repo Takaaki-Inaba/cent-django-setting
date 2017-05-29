@@ -48,7 +48,7 @@ cd mod_wsgi-4.5.14/
 ./configure CFLAGS=-fPIC --enable-shared --with-python=/usr/local/pyenv/versions/3.6.1/bin/python
 make
 make install
-ln -s /usr/local/pyenv/versions/3.6.1/lib/libpython3.6m.so.1.0 /lib64/
+ln -sf /usr/local/pyenv/versions/3.6.1/lib/libpython3.6m.so.1.0 /lib64/
 
 
 echo "<<<<<<<<<<<<<<<<<<<< Apache & wsgi setting success!! >>>>>>>>>>>>>>>>>>" >> /root/setting.log
@@ -106,3 +106,4 @@ EOF
 echo "ALLOWED_HOSTS = ['*']" >> /var/www/cgi-bin/test_proj/test_proj/setting.py
 
 echo "<<<<<<<<<<<<<<<<<<<< setting complete! >>>>>>>>>>>>>>>>>>" >> /root/setting.log
+echo "<<< setting complete! >>>"
