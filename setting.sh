@@ -19,7 +19,9 @@ echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 source ~/.bash_profile
 #exec $SHELL
 
-CONFIGURE_OPTS="--enable-shared" CFLAGS="-fPIC" pyenv install 3.6.1
+yum -y install gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel
+
+CONFIGURE_OPTS="--enable-shared" CFLAGS="-fPIC"; pyenv install 3.6.1
 pyenv rehash
 pyenv global 3.6.1
 
