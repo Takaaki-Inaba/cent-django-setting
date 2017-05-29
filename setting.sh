@@ -45,7 +45,7 @@ wget https://github.com/GrahamDumpleton/mod_wsgi/archive/4.5.14.tar.gz
 tar -zxvf 4.5.14.tar.gz
 cd mod_wsgi-4.5.14/
 
-./configure CFLAGS=-fPIC --enable-shared --with-python=/usr/local/pyenv/versions/bin/python
+./configure CFLAGS=-fPIC --enable-shared --with-python=/usr/local/pyenv/versions/3.6.1/bin/python
 make
 make install
 ln -s /usr/local/pyenv/versions/3.6.1/lib/libpython3.6m.so.1.0 /lib64/
