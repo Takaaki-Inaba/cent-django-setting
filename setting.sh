@@ -5,7 +5,7 @@
 
 #アップデートと開発者用パッケージのインストール
 yum update
-yum groupinstall "Development Tools"
+yum -y groupinstall "Development Tools"
 
 cd /usr/local
 
@@ -17,7 +17,7 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 source ~/.bash_profile
-exec $SHELL
+#exec $SHELL
 
 CONFIGURE_OPTS="--enable-shared" CFLAGS="-fPIC" pyenv install 3.6.1
 pyenv rehash
@@ -34,11 +34,11 @@ django-admin.py startproject test_proj
 cd /var/www/cgi-bin/test_proj/test_proj
 
 #Apacheのインストール
-yum install httpd httpd-devel
+yum -y install httpd httpd-devel
 
 #wsgiのインストールと設定
 cd /root
-yum install wget
+yum -y install wget
 wget https://github.com/GrahamDumpleton/mod_wsgi/archive/4.5.14.tar.gz
 tar -zxvf 4.5.14.tar.gz
 cd mod_wsgi-4.5.14/
