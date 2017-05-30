@@ -6,7 +6,7 @@ pip install django
 echo "<<<<<<<<<<<<<<<<<<<< python & django install success!! >>>>>>>>>>>>>>>>>>" > /root/setting.log
 
 #django projectの作成
-cd /var/www/cgi-bin/
+cd /var/www/cgi-bin
 django-admin.py startproject test_proj
 
 #Apacheのインストール
@@ -17,7 +17,7 @@ yum -y install wget
 cd ~
 wget https://github.com/GrahamDumpleton/mod_wsgi/archive/4.5.14.tar.gz
 tar -zxvf 4.5.14.tar.gz
-rm 4.5.14.tar.gz
+rm -f 4.5.14.tar.gz
 
 cd /root/mod_wsgi-4.5.14
 /root/mod_wsgi-4.5.14/configure CFLAGS=-fPIC --enable-shared --with-python=/root/.pyenv/versions/3.6.1/bin/python
