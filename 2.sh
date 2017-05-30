@@ -77,7 +77,7 @@ EOF
 #wsgi.pyの設定ここまで
 
 #setting.pyのALLOWED_HOSTSを編集
-echo "ALLOWED_HOSTS = ['*']" >> /var/www/cgi-bin/test_proj/test_proj/setting.py
+echo "ALLOWED_HOSTS = ['*']" >> /var/www/cgi-bin/test_proj/test_proj/settings.py
 
 echo "<<<<<<<<<<<<<<<<<<<< setting complete! >>>>>>>>>>>>>>>>>>" >> /root/setting.log 
 echo "<<< setting complete! >>>"
