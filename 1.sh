@@ -17,7 +17,7 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 source ~/.bash_profile
 
-CONFIGURE_OPTS="--enable-shared" CFLAGS="-fPIC"; /root/.pyenv/bin/pyenv install 3.6.1
+CONFIGURE_OPTS="--enable-shared" CFLAGS="-fPIC" /root/.pyenv/bin/pyenv install 3.6.1
 /root/.pyenv/bin/pyenv rehash
 /root/.pyenv/bin/pyenv global 3.6.1
 exec $SHELL -l
