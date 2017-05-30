@@ -37,7 +37,7 @@ LoadModule wsgi_module modules/mod_wsgi.so
 #WSGIScriptAlias /test /var/www/cgi-bin/hello.py
 
 WSGIScriptAlias /test_proj /var/www/cgi-bin/test_proj/test_proj/wsgi.py
-WSGIPythonHome /usr/local/pyenv/versions/3.6.1/
+WSGIPythonHome /root/.pyenv/versions/3.6.1/
 WSGIPythonPath /var/www/cgi-bin/test_proj
 
 <Directory /var/www/cgi-bin/test_proj/test_proj>
