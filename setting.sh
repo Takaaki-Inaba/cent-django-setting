@@ -7,8 +7,6 @@
 yum update
 yum -y groupinstall "Development Tools"
 
-cd /usr/local
-
 #pyenvでpythonをインストール
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
@@ -21,7 +19,7 @@ source ~/.bash_profile
 
 yum -y install gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel
 
-CONFIGURE_OPTS="--enable-shared" CFLAGS="-fPIC"; pyenv install 3.6.1
+CONFIGURE_OPTS="--enable-shared" CFLAGS="-fPIC"; /root/.pyenv/bin/pyenv install 3.6.1
 pyenv rehash
 pyenv global 3.6.1
 
@@ -31,23 +29,20 @@ pip install django
 echo "<<<<<<<<<<<<<<<<<<<< python & django install success!! >>>>>>>>>>>>>>>>>>" > /root/setting.log
 
 #django projectの作成
-cd /var/www/cgi-bin/
-django-admin.py startproject test_proj
-cd /var/www/cgi-bin/test_proj/test_proj
+django-admin.py startproject /var/www/cgi-bin/test_proj
 
 #Apacheのインストール
 yum -y install httpd httpd-devel
 
 #wsgiのインストールと設定
-cd /root
 yum -y install wget
 wget https://github.com/GrahamDumpleton/mod_wsgi/archive/4.5.14.tar.gz
 tar -zxvf 4.5.14.tar.gz
-cd mod_wsgi-4.5.14/
 
-./configure CFLAGS=-fPIC --enable-shared --with-python=/usr/local/pyenv/versions/3.6.1/bin/python
-make
-make install
+RHOME="/root"
+$RHOME/mod_wsgi-4.5.14/configure CFLAGS=-fPIC --enable-shared --with-python=/usr/local/pyenv/versions/3.6.1/bin/python
+mod_wsgi-4.5.14/make
+mod_wsgi-4.5.14/make install
 ln -sf /usr/local/pyenv/versions/3.6.1/lib/libpython3.6m.so.1.0 /lib64/
 
 
@@ -103,7 +98,7 @@ EOF
 #wsgi.pyの設定ここまで
 
 #setting.pyのALLOWED_HOSTSを編集
-echo "ALLOWED_HOSTS = ['*']" >> /var/www/cgi-bin/test_proj/test_proj/settings.py
+echo "ALLOWED_HOSTS = ['*']" >> /var/www/cgi-bin/test_proj/test_proj/setting.py
 
-echo "<<<<<<<<<<<<<<<<<<<< setting complete! >>>>>>>>>>>>>>>>>>" >> /root/setting.log
+echo "<<<<<<<<<<<<<<<<<<<< setting complete! >>>>>>>>>>>>>>>>>>" >> /root/setting.log 
 echo "<<< setting complete! >>>"
