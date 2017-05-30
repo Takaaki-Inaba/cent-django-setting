@@ -4,7 +4,7 @@
 #AWSで動かすならセキュリティグループでHTTPを開けとくこと
 
 #アップデートと開発者用パッケージのインストール
-yum update
+yum -y update
 yum -y groupinstall "Development Tools"
 yum -y install gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel
 
