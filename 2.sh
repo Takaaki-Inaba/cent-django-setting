@@ -1,5 +1,6 @@
-pip install django
+#!/bin/sh
 
+pip install django
 
 echo "<<<<<<<<<<<<<<<<<<<< python & django install success!! >>>>>>>>>>>>>>>>>>" > /root/setting.log
 
