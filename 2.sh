@@ -6,8 +6,7 @@ pip install django
 echo "<<<<<<<<<<<<<<<<<<<< python & django install success!! >>>>>>>>>>>>>>>>>>" > /root/setting.log
 
 #django projectの作成
-cd /var/www/cgi-bin
-django-admin.py startproject test_proj
+cd /var/www/cgi-bin && django-admin.py startproject test_proj
 
 #Apacheのインストール
 yum -y install httpd httpd-devel
