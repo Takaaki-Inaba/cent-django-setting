@@ -18,7 +18,7 @@ RHOME="/root"
 $RHOME/mod_wsgi-4.5.14/configure CFLAGS=-fPIC --enable-shared --with-python=/root/.pyenv/versions/3.6.1/bin/python
 cd $RHOME/mod_wsgi-4.5.14; make
 cd $RHOME/mod_wsgi-4.5.14; make install
-ln -sf /usr/local/pyenv/versions/3.6.1/lib/libpython3.6m.so.1.0 /lib64/
+ln -sf /root/.pyenv/versions/3.6.1/lib/libpython3.6m.so.1.0 /lib64/
 
 
 echo "<<<<<<<<<<<<<<<<<<<< Apache & wsgi setting success!! >>>>>>>>>>>>>>>>>>" >> /root/setting.log
