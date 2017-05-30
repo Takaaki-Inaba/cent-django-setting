@@ -36,7 +36,7 @@ LoadModule wsgi_module modules/mod_wsgi.so
 # /test というリクエストに対して、/var/www/cgi-bin/hello.py 返す。
 #WSGIScriptAlias /test /var/www/cgi-bin/hello.py
 
-WSGIScriptAlias / /var/www/cgi-bin/test_proj/test_proj/wsgi.py
+WSGIScriptAlias /test_proj /var/www/cgi-bin/test_proj/test_proj/wsgi.py
 WSGIPythonHome /usr/local/pyenv/versions/3.6.1/
 WSGIPythonPath /var/www/cgi-bin/test_proj
 
