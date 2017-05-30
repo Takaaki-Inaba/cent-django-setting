@@ -1,11 +1,13 @@
 #!/bin/sh
+#.を先頭についけて実行
 
 pip install django
 
 echo "<<<<<<<<<<<<<<<<<<<< python & django install success!! >>>>>>>>>>>>>>>>>>" > /root/setting.log
 
 #django projectの作成
-(cd /var/www/cgi-bin/; django-admin.py startproject test_proj)
+cd /var/www/cgi-bin/
+django-admin.py startproject test_proj
 
 #Apacheのインストール
 yum -y install httpd httpd-devel
@@ -17,8 +19,10 @@ tar -zxvf 4.5.14.tar.gz
 
 RHOME="/root"
 $RHOME/mod_wsgi-4.5.14/configure CFLAGS=-fPIC --enable-shared --with-python=/root/.pyenv/versions/3.6.1/bin/python
-(cd $RHOME/mod_wsgi-4.5.14; make) 
-(cd $RHOME/mod_wsgi-4.5.14; make install)
+cd $RHOME/mod_wsgi-4.5.14
+make
+cd $RHOME/mod_wsgi-4.5.14
+make install
 ln -sf /root/.pyenv/versions/3.6.1/lib/libpython3.6m.so.1.0 /lib64/
 
 
